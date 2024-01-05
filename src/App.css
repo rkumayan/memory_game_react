@@ -13,7 +13,7 @@ body {
 
 .App{
     max-width : 860px;
-    margin : 40px auto;
+    margin : 0px auto;
 }
 button{
     background : none;
