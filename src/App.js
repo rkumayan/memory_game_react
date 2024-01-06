@@ -73,7 +73,7 @@ function App() {
       setTimeout( () => setShowModal(true) , 700);
       
     }
-  } , cards);
+  } ,[ cards]);
   //reset choices and increase turn
   const resetTurn = () =>{
     console.log( "reset called");
