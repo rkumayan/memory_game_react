@@ -35,21 +35,13 @@ function App() {
     
   }, []);
   console.log(cards);
+
   // compare two selected cards
   useEffect( () =>{
     if( choiceOne && choiceTwo){
       if( choiceOne.src == choiceTwo.src){
         console.log( "choices are same" , cards , cards.length);
-        // let temp = [];
-        // for( let i = 0; i < 12; ++i){
-        //   temp.push(cards[i]);
-        //   if( cards[i].src == choiceOne.src)
-        //     temp[i].matched = true;
-        // }
-        // console.log(temp);
-        // setCards(temp);
-        
-        
+                        
         setCards( prev => {
           return prev.map( (card) =>{
             if( card.src == choiceOne.src)
@@ -59,7 +51,8 @@ function App() {
         })
 
       }
-      resetTurn();
+      setTimeout( () => resetTurn() , 1000);
+      
     }
 
   }, [choiceOne , choiceTwo]);
@@ -83,7 +76,10 @@ function App() {
       Turns : {turns}
       <div className="card-grid">
         {cards.map( card => (
-          <Card card = {card} key = {card.id} handleChoice= {handleChoice}/>
+          <Card card = {card} key = {card.id}
+           handleChoice= {handleChoice}
+           flipped = { card === choiceOne || card === choiceTwo || card.matched}
+           />
         ))}
 
       </div>
