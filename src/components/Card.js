@@ -1,11 +1,11 @@
 import './card.css'
-const Card = ( {card , handleChoice , flipped}) => {
+const Card = ( {card , handleChoice , flipped , disabled}) => {
     const handleClick = () =>{
         handleChoice( card );
     }
     
     return (  
-        <div className="card" >
+        <div className="card"  disabled = {disabled}>
             <div className = { flipped ? "flipped" : ""}>
                 {/* FRONT */}            
                 <img className = "front"

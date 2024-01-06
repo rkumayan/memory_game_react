@@ -18,7 +18,9 @@ body {
 button{
     background : none;
     border : 2px solid #fff;
-    padding : 6px 12px;
+    padding : 6px 12px;    
+    height:50px;
+    margin-top:15px;
     border-radius : 4px;
     color:#fff;
     font-weight : bold;
@@ -29,9 +31,25 @@ button:hover{
     background: #c23866;
     color : #fff;
 }
+.App .navbar{    
+    display: flex;
+    justify-content: space-around;
+}
 .card-grid {
     margin-top: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap : 20px;
 }
+.copyright{
+    font-size:20px;
+    position:fixed;    
+    bottom:-10px;
+    right:5px;
+}
+
+@media only screen and (max-width: 600px) {
+   .card-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+   }
+  }
